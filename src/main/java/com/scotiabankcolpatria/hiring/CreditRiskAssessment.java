@@ -10,12 +10,9 @@ public class CreditRiskAssessment {
 
 
     public double standardDeviation(int[] paymentDelays) {
-
-        double suma = 0, res = 0, standardDeviation = 0, mean = 0, sq = 0;
-
+        double suma = 0, standardDeviation = 0, mean = 0;
         int numberPositions = paymentDelays.length;
 
-        System.out.println("Elements are:");
         for (int i = 0; i < numberPositions; i++) {
             System.out.println(paymentDelays[i]);
         }
@@ -30,9 +27,7 @@ public class CreditRiskAssessment {
             standardDeviation = standardDeviation + Math.pow((paymentDelays[i] - mean), 2);
         }
 
-        sq = standardDeviation / numberPositions;
-        res = Math.sqrt(sq);
-        return res;
+        return Math.sqrt(standardDeviation / numberPositions);
     }
 
     public int paymentDelayMaxPeakIndex(int[] paymentDelays) {
